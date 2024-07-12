@@ -1,4 +1,8 @@
+use anyhow::Result;
 use day1::day_1;
+use day2::day_2;
+use day3::day_3;
+use day4::day_4;
 
 mod day1;
 mod day10;
@@ -26,9 +30,12 @@ mod day7;
 mod day8;
 mod day9;
 
-pub fn solution(day: u8, is_p2: bool) -> String {
+pub fn solution(day: u8, is_p2: bool) -> Result<String> {
     match day {
-        1 => day_1(is_p2).unwrap(),
-        _ => "No solution yet".to_string(),
+        1 => day_1(is_p2),
+        2 => day_2(is_p2),
+        3 => day_3(is_p2),
+        4 => day_4(is_p2),
+        _ => Ok("No solution yet".to_string()),
     }
 }
